@@ -21,7 +21,3 @@ class Company(models.Model):
     number_of_employees = models.IntegerField()
     company_abrv = models.CharField(max_length=8)
 
-
-
-
-
