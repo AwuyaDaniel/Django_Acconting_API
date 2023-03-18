@@ -2,9 +2,14 @@ from rest_framework import serializers
 from .models import *
 
 
-class CompanySerializer(serializers.HyperlinkedModelSerializer):
+class JournalEntrySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Company
-        fields = ('id', 'url', 'name', 'company_type', 'address_1', 'address_2', 'city', 'state',
-                  'country', 'zip_code', 'phone_number', 'email', 'website', 'tax_id',
-                  'industry', 'founding_date', 'revenue', 'number_of_employees', 'company_abrv')
+        model = JournalEntry
+        fields = ('id', 'url', 'user', 'date', 'description', 'address_2', 'debit_account', 'debit_amount',
+                  'credit_account', 'credit_amount')
+
+
+class AccountEntriesSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = AccountEntries
+        fields = ('id', 'url', 'name', 'chart_of_account')
