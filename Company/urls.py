@@ -8,5 +8,5 @@ router.register('company', views.CompanyView)
 # App_name = 'Accounting'
 
 urlpatterns = [
-    path('company', include(router.urls))
+    path('', include(router.urls))
 ]

@@ -9,5 +9,5 @@ router.register('account_entries', views.AccountEntriesView)
 # App_name = 'Accounting'
 
 urlpatterns = [
-    path('journal_entry', include(router.urls))
+    path('', include(router.urls))
 ]

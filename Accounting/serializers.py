@@ -5,8 +5,7 @@ from .models import *
 class ChartOfAccountSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = ChartOfAccount
-        fields = ('id', 'url', 'name', 'code', 'parent_path', 'balance', 'description', 'group_of_chart_of_account',
-                  'chart_of_account_type', 'company')
+        fields = '__all__'
 
 
 class GroupOfChartOfAccountSerializer(serializers.HyperlinkedModelSerializer):

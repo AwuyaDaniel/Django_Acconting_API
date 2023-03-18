@@ -6,7 +6,7 @@ from Company.models import Company
 class GroupOfChartOfAccount(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField(blank=True)
-    company = models.ForeignKey('Company', on_delete=models.CASCADE)
+    company = models.ForeignKey(Company, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name_plural = 'Groups of Chart of Accounts'
@@ -18,7 +18,7 @@ class GroupOfChartOfAccount(models.Model):
 class ChartOfAccountType(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField(blank=True)
-    company = models.ForeignKey('Company', on_delete=models.CASCADE)
+    company = models.ForeignKey(Company, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name_plural = 'Groups of Chart of Accounts'
@@ -36,9 +36,9 @@ class ChartOfAccount(models.Model):
     description = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    group_of_chart_of_account = models.ForeignKey('GroupOfChartOfAccount', on_delete=models.CASCADE, blank=True,
+    group_of_chart_of_account = models.ForeignKey(GroupOfChartOfAccount, on_delete=models.CASCADE, blank=True,
                                                   null=True)
-    chart_of_account_type = models.ForeignKey('ChartOfAccountType', on_delete=models.CASCADE, blank=True, null=True)
+    chart_of_account_type = models.ForeignKey(ChartOfAccountType, on_delete=models.CASCADE, blank=True, null=True)
     company = models.ForeignKey(Company, on_delete=models.CASCADE, blank=False)
 
     def __str__(self):
